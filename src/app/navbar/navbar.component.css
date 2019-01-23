@@ -1,0 +1,12 @@
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.nav-link {
+    font-weight: bold;
+}
+
+li {
+    cursor: pointer;
+}
