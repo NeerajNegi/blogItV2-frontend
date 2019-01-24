@@ -8,7 +8,7 @@ const httpOptions = {
 @Injectable()
 export class ApiService {
 
-  apiUrl = 'http://blogitneeraj.herokuapp.com/api';
+  apiUrl = 'https://blogitneeraj.herokuapp.com/api';
 
   constructor(private http: HttpClient) { }
 
