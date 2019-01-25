@@ -8,9 +8,31 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-3">
-      <app-blog-card></app-blog-card>
-    </div>
+      <div class="lds-ellipsis" *ngIf="loading">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+      <div class="col-md-12" *ngIf="!loading">
+          <h1 style="margin-left: 15px;">Latest Posts</h1>
+          
+          <!-- Search Box -->
+          <!-- <div class="search-box">
+            <input type="text" placeholder="Search">
+          </div> -->
+
+          <hr>
+
+          <div class="blogs-wrapper">
+              <app-blog-card *ngFor="let blog of blogs" [blog]=blog></app-blog-card>
+              <app-blog-card *ngFor="let blog of blogs" [blog]=blog></app-blog-card>
+              <app-blog-card *ngFor="let blog of blogs" [blog]=blog></app-blog-card>
+              <app-blog-card *ngFor="let blog of blogs" [blog]=blog></app-blog-card>
+              <app-blog-card *ngFor="let blog of blogs" [blog]=blog></app-blog-card>
+              <app-blog-card *ngFor="let blog of blogs" [blog]=blog></app-blog-card>
+          </div>
+      </div>
   </div>
 </div>
 

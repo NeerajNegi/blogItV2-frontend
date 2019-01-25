@@ -8,6 +8,8 @@ import { ApiService } from '../api.service';
 })
 export class HomeComponent implements OnInit {
 
+  blogs: Array<any>;
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
@@ -16,23 +18,11 @@ export class HomeComponent implements OnInit {
 
   getBlogs() {
     this.apiService.get('/blogs').subscribe( 
-      data => console.log(data),
-      err => console.error(err),
-      () => console.log('Done loading Blogs')
+      data => {
+        console.log(data);
+        this.blogs = data.blogs;
+      },
+      err => console.error(err)
       );
   }
-
-  // postUser() {
-  //   const body = {
-  //     first_name: 'Dave',
-  //     last_name: 'Lee',
-  //     password: 'dave2d',
-  //     email: 'dave@gmail.com'
-  //   }
-  //   this.apiService.post('/users/', body).subscribe(
-  //     res => console.log(res),
-  //     err => console.error(err),
-  //     () => console.log('Done adding User')
-  //   );
-  // }
 }

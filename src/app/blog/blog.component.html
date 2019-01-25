@@ -1,3 +1,42 @@
-<p>
-  blog works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-12">
+      <div class="row">
+        <div class="col-md-8 col-sm-8">
+          <h1>{{blog.title}}</h1>
+          <h6>Writer: {{blog.authorName}}</h6>
+        </div>
+        <div class="col-md-4 col-sm-4">
+          <button type="button" class="btn btn-success glyphicon glyphicon-thumbs-up" (click)="upvote()"> {{ blog.claps
+            }}</button>
+        </div>
+        <span class="warning">{{ message }}</span>
+      </div>
+      <hr />
+      <p [innerHTML]="blog.content"></p>
+      <hr />
+    </div>
+    <div class="col-md-6 col-sm-12 search-area">
+      <h6>Hey! you can search for similar words here. Give it a try</h6>
+      <div class="row">
+        <div class="col-md-10">
+          <input type="text" name="searchQuery" [(ngModel)]="searchQuery" placeholder="Enter a word or phrase">
+          <button class="btn btn-primary search" (click)="search()">Search</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="lds-ellipsis" *ngIf="searching">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <ol class="list-group">
+            <li class="list-group-item" *ngFor="let res of searchResult">{{res}}</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

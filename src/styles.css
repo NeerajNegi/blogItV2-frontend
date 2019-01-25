@@ -3,3 +3,39 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+
+/* Home Component Starts*/
+
+.blogs-wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.navbar {
+    width: 100%;
+}
+
+.jumbotron {
+    width: 100%;
+}
+
+/* Home Component Ends */
+
+/* Media Queries */
+
+@media only screen and (max-width: 1000px) {
+    .blogs-wrapper {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .blogs-wrapper {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr;
+    }
+}
