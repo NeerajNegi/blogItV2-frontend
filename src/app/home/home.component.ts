@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 export class HomeComponent implements OnInit {
 
   blogs: Array<any>;
+  loading: boolean = false;
 
   constructor(private apiService: ApiService) { }
 
