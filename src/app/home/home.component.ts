@@ -18,12 +18,18 @@ export class HomeComponent implements OnInit {
   }
 
   getBlogs() {
+    this.loading = true;
     this.apiService.get('/blogs').subscribe( 
       data => {
         console.log(data);
         this.blogs = data['blogs'];
+        this.loading = false;
       },
-      err => console.error(err)
+      err => {
+        console.error(err);
+        this.loading = false;
+      }
       );
   }
+  
 }
