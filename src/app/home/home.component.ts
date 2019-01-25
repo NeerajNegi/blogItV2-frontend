@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     this.apiService.get('/blogs').subscribe( 
       data => {
         console.log(data);
-        this.blogs = data.blogs;
+        this.blogs = data['blogs'];
       },
       err => console.error(err)
       );
