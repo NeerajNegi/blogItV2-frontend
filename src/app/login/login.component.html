@@ -8,7 +8,7 @@
 				<div class="row">
 					<div class="col-cs-12 col-sm-12 col-md-12">
 						<div class="form-group">
-							<input type="text" [(ngModel)]="user.email" name="email" class="form-control input-md" placeholder="Email" tabindex="1" required>
+							<input type="email" [(ngModel)]="user.email" name="email" class="form-control input-md" placeholder="Email" tabindex="1" required>
 						</div>
 					</div>
 					<div class="col-cs-12 col-sm-12 col-md-12">
@@ -27,8 +27,17 @@
 					</div>
 					<div class="col-xs-12 col-sm-4 col-md-4">
 						<div class="form-group">
-							<button type="submit" (click)="login()" class="btn btn-primary btn-block btn-md" tabindex="6">Login</button>
+							<button *ngIf="!loading" (click)="login($event)" class="btn btn-primary btn-block btn-md" tabindex="6">Login</button>
+							<div class="lds-ellipsis" *ngIf="loading">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
 						</div>
+					</div>
+					<div class="col-xs-12 col-sm-8 col-md-8">
+						<p *ngIf="!loading" class="warning">{{ warningMessage }}</p>
 					</div>
 				</div>
 			</form>

@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
     email: '',
     password: ''
   }
+  loading: boolean = false;
+  warningMessage: string = '';
 
   constructor(private apiService: ApiService, 
               private router: Router,
@@ -22,15 +24,29 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(): void {
-    this.apiService.post('/users/login', this.user).subscribe(
-      res => {
-        console.log('User logged In');
-        this.storage.storeUser(JSON.stringify(res));
-        this.router.navigate(['home']);
-      },
-      err => console.error(err),
-      () => console.log('Login Request Complete')
-    );
+  login(event: Event): void {
+    event.preventDefault();
+    this.loading = true;
+    this.warningMessage = '';
+
+    if( this.user.email && this.user.password ){
+      this.apiService.post('/users/login', this.user).subscribe(
+        res => {
+          console.log('User logged In');
+          this.storage.storeUser(JSON.stringify(res));
+          this.router.navigate(['home']);
+        },
+        err => {
+          console.error(err);
+          this.loading = false;
+          this.warningMessage = err.error.message;
+        }
+      );
+    } else {
+      this.loading = false;
+      this.warningMessage = 'Please enter all the fields.';
+    }
+
   }
+
 }

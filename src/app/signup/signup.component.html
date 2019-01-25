@@ -38,11 +38,24 @@
         <!--Buttons-->
         <div class="row">
           <div class="col-xs-12 col-md-6">
-            <a routerLink="/login" class="btn btn-success btn-block btn-md">Sign In</a>
+            <div class="form-group">
+              <a routerLink="/login">
+                Already registered? Login
+              </a>
+            </div>
           </div>
           <div class="col-xs-12 col-md-6">
-            <button type="submit" (click)=signup() class="btn btn-primary btn-block btn-md" tbindex="6">Register</button>
+            <button type="submit" *ngIf="!loading" (click)=signup() class="btn btn-primary btn-block btn-md" tbindex="6">Register</button>
+            <div class="lds-ellipsis" *ngIf="loading">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
           </div>
+          <div class="col-xs-12 col-sm-8 col-md-8">
+						<p *ngIf="!loading" class="warning">{{ warningMessage }}</p>
+					</div>
         </div>
       </form>
     </div>
