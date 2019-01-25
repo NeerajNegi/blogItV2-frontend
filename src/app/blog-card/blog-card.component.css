@@ -1,22 +1,31 @@
 .blog-card {
     width: 350px;
-    height: 200px;
-    border: 1px solid black;
+    height: 300px;
+    background: #365196; 
+    border-radius: 5px;
     padding: 20px;
+    margin-bottom: 100px;
 }
 
 .blog-card-header {
     width: 100%;
-    border: 1px solid black;
+    background: #35C8E9;
+    border-radius: 5px;
+    padding: 10px;
     margin-bottom: 20px;
 }
 
 .blog-card-content {
     width: 100%;
-    border: 1px solid black;
+    border-radius: 5px;
+    background: #43588b;
     margin-bottom: 20px;
+    color: white;
+    padding: 10px;
 }
 
-.blog-card-links {
-    
+.blog-card-links a{
+    float: right;
+    text-decoration: none;
+    color: white !important;
 }
