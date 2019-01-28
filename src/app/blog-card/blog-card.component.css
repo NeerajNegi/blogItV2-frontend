@@ -22,10 +22,22 @@
       "image";
       margin-bottom: 200px;
     }
+
+    .blog-card-text {
+        grid-area: text;
+        text-align: justify;
+        font-size: 16px;
+    }
+    
+    .blog-image {
+        grid-area: image;
+    }
+    
     .blog-image img {
         margin-bottom: 100px;
         max-width: 100%;
     }
+    
   }
 
 .blog-card-text {
