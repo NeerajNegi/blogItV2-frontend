@@ -6,11 +6,11 @@ body {
 
 /* Home Component Starts*/
 
-.blogs-wrapper {
+/* .blogs-wrapper {
     display: grid;
     grid-gap: 20px;
     grid-template-columns: repeat(3, 1fr);
-}
+} */
 
 .navbar {
     width: 100%;
@@ -24,20 +24,16 @@ body {
 
 /* Media Queries */
 
-@media only screen and (max-width: 1000px) {
-    .blogs-wrapper {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: 1fr 1fr; 
-    }
+@media screen and (max-width: 999px) {
 }
 
 @media only screen and (max-width: 768px) {
-    .blogs-wrapper {
-        display: grid;
-        grid-gap: 20px;
-        grid-template-columns: 1fr;
-    }
+}
+
+@media only screen and (max-width: 361px) {
+  .blog-card {
+    margin-bottom: 100px;
+  }
 }
 
 
