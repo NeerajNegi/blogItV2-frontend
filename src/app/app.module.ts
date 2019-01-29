@@ -18,8 +18,10 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { FooterComponent } from './footer/footer.component';
-import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
-
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { MatSnackBarModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfileImageUploaderComponent } from './profile-image-uploader/profile-image-uploader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
     BlogComponent,
     LoginComponent,
     SignupComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileImageUploaderComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,9 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
     MatButtonModule,
     HttpClientModule,
     FormsModule,
-    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot()
+    CKEditorModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [ApiService, StorageService, AuthGuard],
   bootstrap: [AppComponent]

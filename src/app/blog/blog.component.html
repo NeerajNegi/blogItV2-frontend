@@ -1,2 +1,10 @@
 <app-navbar></app-navbar>
-<div [froalaEditor]>Hello, Froala!</div>
+<div class="wrapper">
+    <div class="blog-editor">
+        <ckeditor [editor]="Editor"[(ngModel)]="blogContent" 
+        [config]="editorConfig"></ckeditor>
+    </div>
+    <div class="dictionary">
+        <h4>Dictionary</h4>
+    </div>
+</div>
