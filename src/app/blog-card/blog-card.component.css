@@ -1,6 +1,5 @@
 .blog-card {
     width: 100%;
-    height: 300px;
     padding: 20px;
     margin-bottom: 100px;
     display: grid;
@@ -15,27 +14,8 @@
       background-color: blue;
     }
     .blog-card {
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-areas: 
-      "text"
-      "image";
-      margin-bottom: 200px;
-    }
-
-    .blog-card-text {
-        grid-area: text;
-        text-align: justify;
-        font-size: 16px;
-    }
-    
-    .blog-image {
-        grid-area: image;
-    }
-    
-    .blog-image img {
-        margin-bottom: 100px;
-        max-width: 100%;
+      display: block;
+      margin-bottom: 20px;
     }
     
   }
