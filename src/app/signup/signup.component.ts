@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-signup',
@@ -19,20 +19,13 @@ export class SignupComponent implements OnInit {
     photoUrl: 'https://imgur.com/CiCqQyk.jpg'
   }
 
-  base64textString;
-  selectedFile: File = null;
-  encodedImage;
-  photo_url;
-  imgur_headers = new Headers({'authorization': 'Client-ID 518c974fc307f31'});
-
   confirmPassword: string = '';
   warningMessage: string = '';
   loading: boolean = false;
 
   constructor(private apiService: ApiService, 
     private router: Router,
-    public snackBar: MatSnackBar,
-    public http: HttpClient) { }
+    public snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -79,49 +72,9 @@ export class SignupComponent implements OnInit {
     }
   }
 
-//   handleReaderLoaded(readerEvt) {
-//     var binaryString = readerEvt.target.result;
-//     this.base64textString= btoa(binaryString);
-//  }
-
-//  onFileSelected(e){
-//    this.selectedFile = <File>e.target.files[0];
-//    console.log('File Selected');
-//    //console.log(typeof this.selectedFile);
-
-//    var reader = new FileReader();
-//    reader.onload =this.handleReaderLoaded.bind(this);
-//    reader.readAsBinaryString(this.selectedFile);
-//  }
-
-//  onUpload(flag){
-//    this.openSnackBar('Uploading Photo...','');
-//    console.log(this.selectedFile);
-//    //console.log('Base 64 string: ', this.base64textString);
-//    if(this.selectedFile) {
-//      console.log('Uploading File');
-//      const data = {
-//        image: this.base64textString,
-//        type: 'base64'
-//      }
-//      this.http.post('https://api.imgur.com/3/upload', data, { headers: {'authorization': 'Client-ID 518c974fc307f31'} })
-//      .subscribe( (res:any) => {
-//        console.log(res);
-//        if (flag === 1) {
-//          this.user.photo_url = res.data.link;
-//          console.log('User :', this.user.photo_url);
-//        } else {
-//          this.newUser.photo_url = res.data.link;
-//          console.log('New User :', this.newUser.photo_url);
-//        }
-//        this.openSnackBar('Photo Uploaded','');
-//      }, (error)=>{
-//        console.log(error);
-//        this.openSnackBar('Error uploading Photo','');
-//      });
-//    } else {
-//      alert('Select A file first');
-//    }
-//  }
+  setPhotoUrl(url: string) {
+    this.user.photoUrl = url;
+    console.log(this.user);
+  }
 
 }

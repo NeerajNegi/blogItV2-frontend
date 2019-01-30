@@ -1,0 +1,27 @@
+.wrapper {
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+}
+
+.profile {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.profile span {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.profile-edit-form {
+    margin: 0 auto;
+    width: 80%;
+}

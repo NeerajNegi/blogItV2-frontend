@@ -6,16 +6,12 @@
         <h2>Create an account</h2>
         <hr/>
         <!--first name and last nam-->
-        <!-- <div class="row">
-          <div style="text-align: center; margin: 0 auto;">
-            <div class="image-container">
-              <input type="file" style="display: none;" (change)="onFileSelected($event)"
-              #addfileInput>
-              <img [src]="user.photoUrl" alt="Profile" style="border-radius: 50%; width: 100px; height: 100px; cursor: pointer;" (click)="addfileInput.click()">
-            </div>
-            <button (click)="onUpload(0)" class="btn btn-flat btn-rounded btn-sm" style="color: black;">Upload</button>
-          </div>
-        </div> -->
+        <div class="row">
+          <app-profile-image-uploader 
+          [url]="user.photoUrl"
+          (setPhotoUrl)="setPhotoUrl($event)">
+        </app-profile-image-uploader>
+        </div>
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="form-group">

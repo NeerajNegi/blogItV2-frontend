@@ -1,3 +1,20 @@
-<p>
-  profile-image-uploader works!
-</p>
+<div class="profile-photo">
+  <div class="image-container">
+    <input type="file" 
+      style="display: none;" 
+      (change)="onFileSelected($event)"
+      #addfileInput>
+    <img [src]="photourl" 
+      alt="Profile" 
+      (click)="addfileInput.click()">
+  </div>
+  <div class="lds-ellipsis" *ngIf="loading">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <button type="button" *ngIf="!loading" (click)="onUpload()" 
+    class="btn btn-flat btn-rounded btn-sm"
+    style="color: black;">Upload</button>
+</div>

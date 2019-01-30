@@ -1,0 +1,13 @@
+.profile-photo {
+	text-align: center; 
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.image-container img{
+	border-radius: 50%; 
+	width: 100px; 
+	height: 100px; 
+	cursor: pointer;
+	margin-bottom: 20px;
+}

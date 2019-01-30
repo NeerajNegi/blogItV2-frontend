@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
   getUser(): void {
     const user = this.storage.retrieveUser();
     if(user){
-      this.displayName = user.displayName;
+      this.displayName = user.firstName + ' ' + user.lastName;
       this.loggedIn = true;
     }
   }

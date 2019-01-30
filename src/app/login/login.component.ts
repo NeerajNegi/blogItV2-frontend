@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { StorageService } from '../storage.service';
 import { Router } from '@angular/router';
+import { userInfo } from 'os';
 
 @Component({
   selector: 'app-login',
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
       this.apiService.post('/users/login', this.user).subscribe(
         res => {
           console.log('User logged In');
-          this.storage.storeUser(JSON.stringify(res));
+          this.storage.storeUser(JSON.stringify(res['userInfo']));
           this.router.navigate(['home']);
         },
         err => {

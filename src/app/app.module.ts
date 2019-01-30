@@ -22,6 +22,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatSnackBarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfileImageUploaderComponent } from './profile-image-uploader/profile-image-uploader.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { ProfileImageUploaderComponent } from './profile-image-uploader/profile-
     LoginComponent,
     SignupComponent,
     FooterComponent,
-    ProfileImageUploaderComponent
+    ProfileImageUploaderComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

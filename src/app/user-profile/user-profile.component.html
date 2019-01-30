@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+  <div class="profile" *ngIf="!isEditing">
+    <h2>Profile Details <span class="glyphicon glyphicon-pencil" (click)="toggleEdit()"></span></h2>
+    <img [src]="user.photoUrl" alt="Profile Picture">
+  </div>
+  <div class="profile-edit-form" *ngIf="isEditing">
+    <h2>Edit Details</h2>
+    <form>
+      <hr/>
+      <!--first name and last nam-->
+      <div class="row">
+        <app-profile-image-uploader 
+        [url]="user.photoUrl"
+        (setPhotoUrl)="setPhotoUrl($event)">
+      </app-profile-image-uploader>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="user.firstName" 
+              name="firstname" class="form-control input-md" 
+              [value]="user.firstName" tabindex="1" required>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="text" 
+              [(ngModel)]="user.lastName" 
+              name="lastname"
+               class="form-control input-md" 
+               [value]="user.lastName" tabindex="2" required>
+          </div>
+        </div>
+      </div>
+      <!--email-->
+      <div class="form-group">
+          <input type="email" 
+            class="form-control input-md"
+           tabindex="3" disabled="true"
+           [value]="user.email">
+      </div>
+      <!--Password-->
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="password" [(ngModel)]="user.password" name="password" class="form-control input-md" placeholder="Password" tabindex="4" required>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="form-group">
+            <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" class="form-control input-md" placeholder="Confirm Password" tabindex="5" required>
+          </div>
+        </div>
+      </div>
+      <!--Buttons-->
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <button type="submit" *ngIf="!loading" (click)=updateUserInfo() class="btn btn-primary btn-block btn-md" tbindex="6">Update</button>
+          <div class="lds-ellipsis" *ngIf="loading">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8">
+          <p *ngIf="!loading" class="warning">{{ warningMessage }}</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
