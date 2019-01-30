@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { StorageService } from '../storage.service';
 import { Router } from '@angular/router';
-import { userInfo } from 'os';
 
 @Component({
   selector: 'app-login',
