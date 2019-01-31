@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../../services/api.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 

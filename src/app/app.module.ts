@@ -1,28 +1,33 @@
+//Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
-
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { BlogCardComponent } from './blog-card/blog-card.component';
-import { BlogComponent } from './blog/blog.component';
-import { ApiService } from './api.service';
 import { HttpClientModule } from '@angular/common/http';
-import { StorageService } from './storage.service';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
-import { AuthGuard } from './auth.guard';
-import { FooterComponent } from './footer/footer.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatSnackBarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProfileImageUploaderComponent } from './profile-image-uploader/profile-image-uploader.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+
+
+//Components
+import { AppComponent } from './app.component';
+import { ProfileImageUploaderComponent } from './components/profile-image-uploader/profile-image-uploader.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { BlogCardComponent } from './components/blog-card/blog-card.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+
+//Services
+import { ApiService } from './services/api.service';
+import { AuthGuard } from './services/auth.guard';
+import { StorageService } from './services/storage.service';
+
 @NgModule({
   declarations: [
     AppComponent,
