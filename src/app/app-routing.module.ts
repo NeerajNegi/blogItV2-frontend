@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { BlogComponent } from './blog/blog.component';
-import { AuthGuard } from './auth.guard';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { HomeComponent} from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { AuthGuard } from './services/auth.guard';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -29,6 +29,11 @@ const routes: Routes = [
     path: 'profile',
     component: UserProfileComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   {
     path: '**',

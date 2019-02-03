@@ -35,7 +35,8 @@ export class ProfileImageUploaderComponent implements OnInit {
   onFileSelected(e){
     this.selectedFile = <File>e.target.files[0];
     console.log('File Selected');
-    //console.log(typeof this.selectedFile);
+    console.log(typeof this.selectedFile);
+    console.log(this.selectedFile);
 
     var reader = new FileReader();
     reader.onload =this.handleReaderLoaded.bind(this);
@@ -45,7 +46,7 @@ export class ProfileImageUploaderComponent implements OnInit {
   onUpload(){
     this.loading = true;
     console.log(this.selectedFile);
-    //console.log('Base 64 string: ', this.base64textString);
+    console.log('Base 64 string: ', this.base64textString);
     if(this.selectedFile) {
       console.log('Uploading File');
       const data = {
