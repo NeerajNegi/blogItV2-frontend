@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatSnackBarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 //Components
@@ -50,7 +51,8 @@ import { StorageService } from './services/storage.service';
     FormsModule,
     CKEditorModule,
     MatSnackBarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [ApiService, StorageService, AuthGuard],
   bootstrap: [AppComponent]

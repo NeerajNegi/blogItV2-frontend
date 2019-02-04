@@ -9,6 +9,10 @@
   padding: 10px;
 }
 
+.blog-preview img{
+  max-width: 100%;
+}
+
 @media screen and (max-width: 1050px) {
   .wrapper {
     display: block;
