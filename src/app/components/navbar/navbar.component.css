@@ -1,6 +1,7 @@
 .navbar {
     border-radius: 0;
     margin-bottom: 0;
+    background: #E5FAF8;
 }
 
 .nav-link {
@@ -15,4 +16,10 @@ li {
     width: 30px;
     border-radius: 50%;
     margin-right: 10px;
+}
+
+.navbar-brand {
+    font-family: 'Pacifico', cursive;
+    color: #516FCA;
+    font-size: 2.5rem;
 }
