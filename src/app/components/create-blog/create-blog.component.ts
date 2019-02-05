@@ -1,27 +1,78 @@
 import { Component, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  templateUrl: './create-blog.component.html',
+  styleUrls: ['./create-blog.component.css']
 })
 
 // const imgur_headers = new Headers({'authorization': 'Client-ID 518c974fc307f31'});
 
-export class BlogComponent implements OnInit {
+export class CreateBlogComponent implements OnInit {
 
-  constructor() { }
-  
+  constructor(private http: HttpClient) { }
+
+  base64textString;
+  selectedFile: File = null;
+  encodedImage;
+  loading: boolean = false;
   blogContent: string = 'Hello';
   editorConfig = {
      removePlugins: [ 'MediaEmbed', 'Table'],
      extraPlugins: [this.MyCustomUploadAdapterPlugin]
   };
-  
+
+  photourl = 'https://images.pexels.com/photos/1417651/pexels-photo-1417651.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+
   public Editor = ClassicEditor;
 
   ngOnInit() {
+  }
+
+  handleReaderLoaded(readerEvt) {
+    var binaryString = readerEvt.target.result;
+    this.base64textString= btoa(binaryString);
+  }
+
+  onFileSelected(e){
+    this.selectedFile = <File>e.target.files[0];
+    console.log('File Selected');
+    console.log(typeof this.selectedFile);
+    console.log(this.selectedFile);
+
+    alert('Now Press Upload Button');
+
+    var reader = new FileReader();
+    reader.onload =this.handleReaderLoaded.bind(this);
+    reader.readAsBinaryString(this.selectedFile);
+  }
+
+  onUpload(){
+    this.loading = true;
+    console.log(this.selectedFile);
+    console.log('Base 64 string: ', this.base64textString);
+    if(this.selectedFile) {
+      console.log('Uploading File');
+      const data = {
+        image: this.base64textString,
+        type: 'base64'
+      }
+      this.http.post('https://api.imgur.com/3/upload', data, { headers: {'authorization': 'Client-ID 518c974fc307f31'} })
+      .subscribe( (res:any) => {
+        console.log(res);
+        this.photourl= res.data.link;
+        console.log(this.photourl);
+        this.loading = false;
+        // this.setUrl();
+      }, (error)=>{
+        this.loading = false;
+        console.log(error);
+      });
+    } else {
+      alert('Select A file first');
+    }
   }
 
   submitBlog() {
@@ -38,6 +89,7 @@ export class BlogComponent implements OnInit {
 
 }
 
+//Custom Image Upload Adapter
 class MyUploadAdapter {
   loader;
   url;

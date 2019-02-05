@@ -13,6 +13,27 @@
   max-width: 100%;
 }
 
+.header-image {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.header-image img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.header-image button {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 1050px) {
   .wrapper {
     display: block;

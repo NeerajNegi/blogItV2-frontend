@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<mat-tab-group>
+    <mat-tab label="Blog">
+        <div class="wrapper">
+            <div class="blog-editor">
+                <div class="header-image">
+                    <input type="file" 
+                        style="display: none;" 
+                        (change)="onFileSelected($event)"
+                        #addfileInput>
+                    <img [src]="photourl" 
+                        alt="Profile" 
+                        (click)="addfileInput.click()">
+                    <!-- Loading Animatior-->
+                    <div class="lds-ellipsis" *ngIf="loading">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <button type="button" *ngIf="!loading" (click)="onUpload()" 
+                        class="btn btn-flat btn-rounded btn-sm"
+                        style="color: black;">Upload</button>
+                </div>
+
+                <ckeditor [editor]="Editor"[(ngModel)]="blogContent" 
+                [config]="editorConfig"></ckeditor>
+                <button class="btn btn-primary" (click)="submitBlog()">Save</button>
+
+            </div>
+            <div class="dictionary">
+                <h4>Preview</h4>
+                <div  class="blog-preview" [innerHTML]="blogContent"></div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Dictionary">
+        <app-dictionary></app-dictionary>
+    </mat-tab>
+</mat-tab-group>

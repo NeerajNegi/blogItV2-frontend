@@ -20,7 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { BlogCardComponent } from './components/blog-card/blog-card.component';
-import { BlogComponent } from './components/blog/blog.component';
+import { CreateBlogComponent } from './components/create-blog/create-blog.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -28,6 +28,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ApiService } from './services/api.service';
 import { AuthGuard } from './services/auth.guard';
 import { StorageService } from './services/storage.service';
+import { ViewBlogComponent } from './components/view-blog/view-blog.component';
+import { OwnBlogsComponent } from './components/own-blogs/own-blogs.component';
+import { DictionaryComponent } from './components/dictionary/dictionary.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +38,15 @@ import { StorageService } from './services/storage.service';
     NavbarComponent,
     HomeComponent,
     BlogCardComponent,
-    BlogComponent,
+    CreateBlogComponent,
     LoginComponent,
     SignupComponent,
     FooterComponent,
     ProfileImageUploaderComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ViewBlogComponent,
+    OwnBlogsComponent,
+    DictionaryComponent
   ],
   imports: [
     BrowserModule,

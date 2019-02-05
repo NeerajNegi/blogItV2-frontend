@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent} from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { BlogComponent } from './components/blog/blog.component';
+import { CreateBlogComponent } from './components/create-blog/create-blog.component';
 import { AuthGuard } from './services/auth.guard';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { OwnBlogsComponent } from './components/own-blogs/own-blogs.component';
+import { ViewBlogComponent } from './components/view-blog/view-blog.component';
 
 const routes: Routes = [
   {
@@ -21,8 +23,16 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
-    path: 'blog',
-    component: BlogComponent,
+    path: 'ownBlogs',
+    component: OwnBlogsComponent
+  },
+  {
+    path: 'viewBlog',
+    component: ViewBlogComponent
+  },
+  {
+    path: 'create-blog',
+    component: CreateBlogComponent,
     canActivate: [AuthGuard]
   },
   {
