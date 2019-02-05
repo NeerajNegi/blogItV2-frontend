@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1ac1b659-b179-453e-af39-b81592bfec78/deploy-status)](https://app.netlify.com/sites/logy/deploys)
+
