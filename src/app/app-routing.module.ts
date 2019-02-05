@@ -24,7 +24,8 @@ const routes: Routes = [
   },
   {
     path: 'ownBlogs',
-    component: OwnBlogsComponent
+    component: OwnBlogsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'viewBlog',

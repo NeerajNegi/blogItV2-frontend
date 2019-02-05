@@ -28,7 +28,9 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right" *ngIf="loggedIn">
 				<li class="dropdown">
-					<a class="dropdown-toggle" data-toggle="dropdown" role="button">{{ displayName }}<span class="caret"></span></a>
+					<a class="dropdown-toggle" data-toggle="dropdown" role="button">
+						<img [src]="photoUrl" alt="">	{{ displayName }}<span class="caret"></span>
+					</a>
 					<ul class="dropdown-menu">
 						<li><a (click)="logout()">Logout</a></li>
 						<li><a routerLink="/profile">Profile Settings</a></li>

@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
 
   loggedIn: boolean = false;
   displayName: string = '';
+  photoUrl: string = '';
 
   constructor(private apiService: ApiService, 
               private storage: StorageService,
@@ -33,6 +34,7 @@ export class NavbarComponent implements OnInit {
     if(user){
       this.displayName = user.firstName + ' ' + user.lastName;
       this.loggedIn = true;
+      this.photoUrl = user.photoUrl;
     }
   }
 
