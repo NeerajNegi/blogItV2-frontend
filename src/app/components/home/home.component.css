@@ -7,6 +7,11 @@
 .center {
     text-align: center;
 }
+.center h1 {
+    font-family: 'Pacifico', cursive;
+    color: #516FCA;
+    margin-bottom: 25px;
+}
 .search-box {
     float: left;
 }

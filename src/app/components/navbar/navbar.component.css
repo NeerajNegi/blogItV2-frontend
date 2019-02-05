@@ -12,6 +12,10 @@ li {
     cursor: pointer;
 }
 
+.icon-bar {
+    background: #516FCA;
+}
+
 .dropdown-toggle img{
     width: 30px;
     border-radius: 50%;
