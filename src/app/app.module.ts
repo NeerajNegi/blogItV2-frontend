@@ -46,7 +46,7 @@ import { DictionaryComponent } from './components/dictionary/dictionary.componen
     UserProfileComponent,
     ViewBlogComponent,
     OwnBlogsComponent,
-    DictionaryComponent
+    DictionaryComponent,
   ],
   imports: [
     BrowserModule,

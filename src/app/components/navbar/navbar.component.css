@@ -27,3 +27,21 @@ li {
     color: #516FCA;
     font-size: 2.5rem;
 }
+
+.navbar-nav a:hover {
+    background: #516FCA;
+    color: aliceblue;
+}
+
+.navbar-nav a:active {
+    background: #516FCA;
+    color: aliceblue;
+}
+
+.dropdown-menu a{
+    color: #337AB7;
+}
+
+.open {
+    background: #516FCA;
+}

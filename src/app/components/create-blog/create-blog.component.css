@@ -1,3 +1,7 @@
+.container {
+  margin-top: 20px;
+}
+
 .wrapper {
   margin: 24px 50px 0px 50px;
   display: grid;
@@ -10,7 +14,11 @@
 }
 
 .blog-preview img{
-  max-width: 100%;
+  width: 100% !important;
+}
+
+:host ::ng-deep img { 
+  width: 100%;
 }
 
 .header-image {
@@ -39,3 +47,4 @@
     display: block;
   }
 }
+

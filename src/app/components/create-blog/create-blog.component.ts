@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { HttpClient } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './create-blog.component.html',
-  styleUrls: ['./create-blog.component.css']
+  styleUrls: ['./create-blog.component.css'],
 })
 
 // const imgur_headers = new Headers({'authorization': 'Client-ID 518c974fc307f31'});
@@ -18,7 +19,8 @@ export class CreateBlogComponent implements OnInit {
   selectedFile: File = null;
   encodedImage;
   loading: boolean = false;
-  blogContent: string = 'Hello';
+  // blogContent: string = '<img src="https://i.imgur.com/kNPmIAx.png"><p>Hello</p>';
+  blogContent: string = 'Hey There!, Go ahead write Something, You can also add images to blogs.';
   editorConfig = {
      removePlugins: [ 'MediaEmbed', 'Table'],
      extraPlugins: [this.MyCustomUploadAdapterPlugin]
@@ -171,5 +173,4 @@ class MyUploadAdapter {
     reader.readAsBinaryString(selectedFile);
   }
 }
-
 
