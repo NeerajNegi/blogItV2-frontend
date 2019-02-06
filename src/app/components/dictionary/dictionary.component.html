@@ -1,3 +1,22 @@
-<p>
-  dictionary works!
-</p>
+<div class="wrapper">
+  <h4>Hey 😃! you can search for similar words here. Give it a try 🖖</h4>
+  <div>
+      <input type="text" 
+        name="searchQuery" 
+        [(ngModel)]="searchQuery" 
+        placeholder="Enter a word or phrase">
+      <button class="btn btn-primary search" (click)="search()">Search</button>
+  </div>
+  <div>
+      <div class="lds-ellipsis" *ngIf="searching">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ol class="list-group">
+        <h5 *ngIf="searchResult?.length > 0">Here is your result 👻</h5>
+        <li class="list-group-item" *ngFor="let res of searchResult">{{res}}</li>
+      </ol>
+  </div>
+</div>

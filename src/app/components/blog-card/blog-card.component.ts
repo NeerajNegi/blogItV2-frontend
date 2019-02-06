@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { bloomAdd } from '@angular/core/src/render3/di';
 
 @Component({
   selector: 'app-blog-card',
@@ -17,6 +18,7 @@ export class BlogCardComponent implements OnInit {
     for (let i = 0; i < lim; i++) {
       this.blogCaption += this.blog.content[i];
     }
+    console.log(this.blog);
   }
 
 }
