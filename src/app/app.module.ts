@@ -31,6 +31,7 @@ import { StorageService } from './services/storage.service';
 import { ViewBlogComponent } from './components/view-blog/view-blog.component';
 import { OwnBlogsComponent } from './components/own-blogs/own-blogs.component';
 import { DictionaryComponent } from './components/dictionary/dictionary.component';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { DictionaryComponent } from './components/dictionary/dictionary.componen
     BrowserAnimationsModule,
     MatTabsModule
   ],
-  providers: [ApiService, StorageService, AuthGuard],
+  providers: [ApiService, StorageService, AuthGuard, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

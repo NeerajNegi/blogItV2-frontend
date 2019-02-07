@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { StorageService } from '../../services/storage.service';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private apiService: ApiService, 
               private router: Router,
-              private storage: StorageService) { }
+              private storage: StorageService,
+              private loginService: LoginService) { }
 
   ngOnInit() {
   }
@@ -34,6 +36,7 @@ export class LoginComponent implements OnInit {
         res => {
           console.log('User logged In');
           this.storage.storeUser(JSON.stringify(res['userInfo']));
+          this.loginService.loginEvent.next(true);
           this.router.navigate(['home']);
         },
         err => {
