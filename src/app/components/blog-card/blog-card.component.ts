@@ -12,7 +12,7 @@ export class BlogCardComponent implements OnInit {
   
   @Input() blog: Blog;
   blogCaption = '';
-
+  id=2;
   ngOnInit() {
     const lim = this.blog.content.length > 100 ? 100 : this.blog.content.length;
     for (let i = 0; i < lim; i++) {
