@@ -9,7 +9,7 @@ import { StorageService } from '../../services/storage.service';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor(private storage: StorageService) { }
+  constructor(private storage: StorageService, public api: ApiService) { }
   user: any;
   isEditing: boolean = false;
   loading: boolean = false;
@@ -36,5 +36,9 @@ export class UserProfileComponent implements OnInit {
       this.loading = false;
       this.isEditing = false;
     }, 1000);
+  }
+
+  cancel(): void {
+    this.isEditing = false;
   }
 }

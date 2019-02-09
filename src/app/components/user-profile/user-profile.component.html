@@ -55,7 +55,10 @@
       <!--Buttons-->
       <div class="row">
         <div class="col-xs-12 col-md-6">
-          <button type="submit" *ngIf="!loading" (click)=updateUserInfo() class="btn btn-primary btn-block btn-md" tbindex="6">Update</button>
+          <button type="submit" *ngIf="!loading" (click)=updateUserInfo() 
+          class="btn btn-primary btn-block btn-md" tbindex="6">Update</button>
+          <button type="submit" *ngIf="!loading" (click)=cancel() 
+          class="btn btn-primary btn-block btn-md" tbindex="7">Cancel</button>
           <div class="lds-ellipsis" *ngIf="loading">
             <div></div>
             <div></div>

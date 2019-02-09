@@ -35,18 +35,19 @@ export class ProfileImageUploaderComponent implements OnInit {
   onFileSelected(e){
     this.selectedFile = <File>e.target.files[0];
     console.log('File Selected');
-    console.log(typeof this.selectedFile);
-    console.log(this.selectedFile);
+    // console.log(typeof this.selectedFile);
+    // console.log(this.selectedFile);
 
     var reader = new FileReader();
     reader.onload =this.handleReaderLoaded.bind(this);
     reader.readAsBinaryString(this.selectedFile);
+    alert('Now Click on Upload to submit photo.');
   }
 
   onUpload(){
     this.loading = true;
-    console.log(this.selectedFile);
-    console.log('Base 64 string: ', this.base64textString);
+    // console.log(this.selectedFile);
+    // console.log('Base 64 string: ', this.base64textString);
     if(this.selectedFile) {
       console.log('Uploading File');
       const data = {
@@ -57,7 +58,7 @@ export class ProfileImageUploaderComponent implements OnInit {
       .subscribe( (res:any) => {
         console.log(res);
         this.photourl= res.data.link;
-        console.log(this.photourl);
+        // console.log(this.photourl);
         this.loading = false;
         this.setUrl();
       }, (error)=>{
