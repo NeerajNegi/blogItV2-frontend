@@ -11,7 +11,6 @@ export class UserProfileComponent implements OnInit {
 
   constructor(private storage: StorageService, public api: ApiService) { }
   user: any;
-  isEditing: boolean = false;
   loading: boolean = false;
 
   ngOnInit() {
@@ -25,20 +24,15 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
-  toggleEdit(): void {
-    this.isEditing = !this.isEditing;
-  }
-
   updateUserInfo(): void {
     this.loading = true;
-    setTimeout(() => {
-      console.log('done');
-      this.loading = false;
-      this.isEditing = false;
-    }, 1000);
-  }
-
-  cancel(): void {
-    this.isEditing = false;
+    this.api.put('/users/' + this.user.id, this.user).subscribe(
+      res => {
+        console.log(res);
+        this.loading = false;
+      }, err => {
+        console.log(err);
+        this.loading = false;
+      })
   }
 }

@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
         res => {
           console.log('User logged In');
           this.storage.storeUser(JSON.stringify(res['userInfo']));
+          this.storage.storeAccessToken(JSON.stringify(res['token']));
           this.loginService.loginEvent.next(true);
           this.router.navigate(['home']);
         },
