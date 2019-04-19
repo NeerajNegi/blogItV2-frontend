@@ -8,6 +8,7 @@ footer {
     color: #516FCA;
 }
 
-footer p {
-    margin-left: 20px;
+.links {
+    display: flex;
+    justify-content: space-around;
 }
