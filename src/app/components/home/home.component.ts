@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
   getBlogs() {
+    console.log('Running Get Blogs');
     this.loading = true;
     this.apiService.get('/blogs').subscribe( 
       data => {
