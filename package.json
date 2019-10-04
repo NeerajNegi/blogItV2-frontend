@@ -26,7 +26,7 @@
     "@angular/router": "^5.2.0",
     "@ckeditor/ckeditor5-angular": "^1.0.1",
     "@ckeditor/ckeditor5-build-classic": "^11.2.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
